@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Introduction */}
-      <section className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white py-20 px-6">
+      <section id="intro" className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Introduction</h2>
           <p className="text-lg leading-relaxed opacity-90">
