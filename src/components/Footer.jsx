@@ -2,7 +2,7 @@ export default function Navbar() {
   return (
     <footer className="py-12 px-6 border-t bg-gray-900 text-center text-white">
   <div className="text-2xl font-bold mb-2">Mohamed Rami Abbassi</div>
-  <p className="text-gray-300">Freelance Web Design & Web Development</p>
+  <p className="text-gray-300">Web Designer & Web Developer</p>
   <p className="text-sm text-gray-400 mt-4">© 2025 All rights reserved.</p>
 
   {/* Social icons */}

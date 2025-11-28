@@ -275,7 +275,7 @@ export default function Home() {
                     Download my curriculum vitae to learn more about my experience and skills
                   </p>
                   <a
-                    href="/mycv.pdf"
+                    href="mycv.pdf"
                     download
                     className="inline-flex items-center gap-3 px-8 py-4 bg-gray-800 text-white rounded-lg font-bold hover:bg-gray-100 hover:text-gray-800 transition transform hover:scale-105 shadow-lg"
                   >
