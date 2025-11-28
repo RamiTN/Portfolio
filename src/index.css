@@ -28,10 +28,31 @@ a {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Force full width */
+.min-h-screen {
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+section {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
 }
 
 h1 {
@@ -69,4 +90,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#intro,h2{
+  animation: normal FadeIn 1s ease-in-out both;
 }
