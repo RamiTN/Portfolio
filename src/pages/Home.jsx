@@ -192,7 +192,7 @@ export default function Home() {
                   <p className="text-gray-600">Download my curriculum vitae to learn more about my experience and skills</p>
                 </div>
                 <a
-                  href="/cv.pdf"
+                  href="/mycv.pdf"
                   download
                   className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >

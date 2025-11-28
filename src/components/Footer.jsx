@@ -8,7 +8,7 @@ export default function Navbar() {
   {/* Social icons */}
   <div className="flex justify-center gap-6 mt-6">
     {/* LinkedIn */}
-    <a href="https://www.linkedin.com/in/abbassi-rami-786253340/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
+    <a href="https://www.linkedin.com/in/mohamed-rami-abbassi-786253340/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2em" height="2em" fill="currentColor">
         <path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2zM.5 8.5h5V24h-5V8.5zm7.5 0h4.8v2.2h.1c.7-1.3 2.5-2.2 5.1-2.2 5.4 0 6.4 3.5 6.4 8V24h-5v-7.5c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4V24h-5V8.5z"/>
       </svg>
