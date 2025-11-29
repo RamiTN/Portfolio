@@ -117,35 +117,42 @@ export default function Home() {
 
         {/* Introduction */}
         <section
-          ref={introRef}
-          id="intro"
-          className="section-animate bg-gradient-to-b from-gray-800 to-purple-600 text-white min-h-screen flex items-center justify-center px-6"
+  ref={introRef}
+  id="intro"
+  className="section-animate min-h-screen bg-gradient-to-b from-gray-800 to-purple-600 text-white flex items-center justify-center px-6 py-16 md:py-0 shadow-2xl"
+>
+  <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+    {/* Text Content */}
+    <div className="text-center md:text-left order-2 md:order-1">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Hello !</h2>
+      <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-pink-300">
+        I'm Abbassi Mohamed Rami
+      </h3>
+      <p className="text-lg lg:text-xl leading-relaxed max-w-lg mx-auto md:mx-0 opacity-90 mb-10">
+        I'm a passionate web developer focused on creating modern and intuitive websites. I enjoy turning ideas into
+        functional, visually appealing projects while writing clean, organized code. Always learning new tools,
+        I aim to deliver experiences that are user-friendly and professional. Feel free to{" "}
+        <a
+          href="#contact"
+          className="font-bold underline decoration-yellow-300 underline-offset-4 hover:text-yellow-300 transition-colors duration-300"
         >
-          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Hello !</h2>
-              <h3 className="text-3xl md:text-4xl font-extrabold mb-6">
-                I'm Abbassi Mohamed Rami
-              </h3>
-              <p className="text-lg leading-relaxed max-w-lg mx-auto md:mx-0 opacity-90 mb-8">
-                I'm a passionate web developer focused on creating modern and intuitive websites. I enjoy turning ideas into
-                functional, visually appealing projects while writing clean, organized code. Always learning new tools,
-                I aim to deliver experiences that are user-friendly and professional. Feel free to{" "}
-                <a href="#contact" className="font-bold underline hover:text-yellow-300 transition">
-                  contact me
-                </a>
-                .
-              </p>
-            </div>
-            <div className="md:w-1/2 flex justify-center">
-              <img
-                src="/computer-removebg-preview.png"
-                alt="Abbassi Mohamed Rami working on computer"
-                className="w-full max-w-md drop-shadow-2xl"
-              />
-            </div>
-          </div>
-        </section>
+          contact me
+        </a>
+        .
+      </p>
+    </div>
+
+    {/* Image */}
+    <div className="flex justify-center order-1 md:order-2">
+      <img
+        src="/computer-removebg-preview.png"
+        alt="Abbassi Mohamed Rami working on a computer"
+        className="w-full max-w-sm lg:max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+        loading="lazy" // Performance boost
+      />
+    </div>
+  </div>
+</section>
 
         {/* Statistics with Animated Counters */}
         <section ref={statsRef} id="stats" className="section-animate py-20 px-6">
