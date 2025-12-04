@@ -14,7 +14,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo / Brand */}
+        
+        {/* Logo */}
         <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
           Rami Abbassi
         </div>
@@ -25,7 +26,8 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
+              className="relative text-slate-300 text-sm font-medium hover:text-blue-400 transition-colors duration-300 pb-2
+              after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </a>
@@ -59,8 +61,8 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
-                onClick={() => setOpen(false)} // close menu on click
+                className="text-slate-300 hover:text-blue-400 transition duration-600 text-sm font-medium"
+                onClick={() => setOpen(false)}
               >
                 {item.label}
               </a>

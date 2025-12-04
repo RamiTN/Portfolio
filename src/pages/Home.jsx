@@ -202,6 +202,21 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">My Journey in Numbers</h2>
               <p className="text-slate-600 text-lg">Continuous growth and dedication to excellence</p>
             </div>
+<details className="group cursor-pointer">
+  <summary className="text-slate-600 text-lg font-medium flex items-center gap-2 cursor-pointer hover:text-slate-800 transition-all">
+    More information about the stats
+    <span className="transition-transform group-open:rotate-90">›</span>
+  </summary>
+
+  <div className="mt-3 pl-1 text-slate-600 space-y-1">
+    <p>I have been learning web development for 3 years and I’m willing to continue improving.</p>
+    <p>I created more than 5 projects to strengthen my skills.</p>
+    <p>I stay fully committed every day and maintain a constant learning mindset to stay updated with new technologies.</p>
+  </div>
+</details>
+
+
+
             <div className="bg-white rounded-3xl p-12 shadow-xl border border-slate-200">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 <CounterCard end={3} suffix="+" label="Years of learning" color="text-blue-600" />
@@ -301,8 +316,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">What I Offer</h2>
-              <p className="text-slate-600 text-lg">Comprehensive web solutions tailored to your needs</p>
-            </div>
+              <p className="text-slate-600 text-lg">Comprehensive web solutions tailored to your needs</p></div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { 
