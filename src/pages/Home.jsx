@@ -204,7 +204,7 @@ export default function Home() {
             </div>
 <details className="group cursor-pointer">
   <summary className="text-slate-600 text-lg font-medium flex items-center gap-2 cursor-pointer hover:text-slate-800 transition-all">
-    More information about the stats
+    More information about the Statistics below
     <span className="transition-transform group-open:rotate-90">›</span>
   </summary>
 
@@ -300,7 +300,7 @@ export default function Home() {
                   <h3 className="text-3xl font-bold mb-3">Explore More Projects</h3>
                   <p className="text-lg text-slate-300 mb-4">Check out my other work on GitHub</p>
                   <span className="inline-flex items-center gap-2 text-blue-400 font-semibold group-hover:gap-4 transition-all">
-                    View GitHub Profile
+                    View GitHub Profile now
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -430,7 +430,7 @@ export default function Home() {
               </div>
 
               <div className="mt-10 pt-10 border-t border-slate-700">
-                <p className="text-slate-400 text-sm text-center mb-6">Or download my resume</p>
+                <p className="text-slate-400 text-sm text-center mb-6">Or download my resume from here</p>
                 <div className="flex justify-center">
                   <a
                     href="mycv.pdf"

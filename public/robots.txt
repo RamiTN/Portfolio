@@ -9,7 +9,7 @@ Disallow: /tmp/
 Disallow: /private/
 
 # Prevent crawling of unnecessary query URLs (if any)
-Disallow: /*?*
+# Disallow: /*?*
 
 # Sitemap location
 Sitemap: https://rami.page.gd/public/sitemap.xml
