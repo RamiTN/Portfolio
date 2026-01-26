@@ -288,10 +288,18 @@ export default function Home() {
                 </div>
               </div>
             
-
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src="/bluevelvet.webp" 
+                    alt="Restaurant show case Project" 
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
             <div className="p-8">
                   <h3 className="text-2xl font-bold mb-2 text-slate-900">BlueVelvet</h3>
-                  <p className="text-slate-500 mb-6">Full-Stack Web Development • web design</p>
+                  <p className="text-slate-500 mb-6">Show case Website • Web development</p>
                   <a
                     href="https://bluevelvet.great-site.net/"
                     target="_blank"
@@ -303,6 +311,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
+                </div>
                 </div>
               </div>
             <div className="mt-16 text-center">
