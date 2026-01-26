@@ -287,8 +287,24 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </div>
+            
 
+            <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-slate-900">BlueVelvet</h3>
+                  <p className="text-slate-500 mb-6">Full-Stack Web Development • web design</p>
+                  <a
+                    href="https://bluevelvet.great-site.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             <div className="mt-16 text-center">
               <a
                 href="https://github.com/RamiTN"
