@@ -98,21 +98,30 @@ export default function Home() {
     });
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formDataToSend = new FormData(form);
-    
-    fetch("https://formsubmit.co/b5348e156d3e17151f1f904bd9a3de17", {
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formDataToSend = new FormData(e.target);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xqenzllw", {
       method: "POST",
-      body: formDataToSend
-    }).then(() => {
-      alert("Message sent successfully!");
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }).catch(() => {
-      alert("Failed to send message. Please try again.");
+      body: formDataToSend,
+      headers: {
+        Accept: "application/json"
+      }
     });
-  };
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      alert("Failed to send message. Please try again.");
+    }
+  } catch (error) {
+    alert("Error sending message.");
+  }
+};
 
   return (
     <>
@@ -380,98 +389,119 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section ref={contactRef} id="contact" className="section-animate py-24 px-6 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h2>
-              <p className="text-slate-300 text-lg">Have a project in mind? I'd love to hear about it</p>
-            </div>
-            
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border border-slate-700/50">
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold mb-2 text-slate-200">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      required
-                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-white placeholder-slate-400"
-                      placeholder="John Doe"
-                    />
-                  </div>
+<section
+  ref={contactRef}
+  id="contact"
+  className="section-animate py-24 px-6 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white"
+>
+  <div className="max-w-4xl mx-auto">
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold mb-2 text-slate-200">Your Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      required
-                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-white placeholder-slate-400"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Let's Work Together
+      </h2>
+      <p className="text-slate-300 text-lg">
+        Have a project in mind? I'd love to hear about it
+      </p>
+    </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-slate-200">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                    required
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-white placeholder-slate-400"
-                    placeholder="Project inquiry"
-                  />
-                </div>
+    <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border border-slate-700/50">
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold mb-2 text-slate-200">Message</label>
-                  <textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    required
-                    rows="6"
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none text-white placeholder-slate-400"
-                    placeholder="Tell me about your project..."
-                  ></textarea>
-                </div>
+      <form onSubmit={handleSubmit} className="space-y-6">
 
-                <button
-                  onClick={() => {
-                    const mailtoLink = `mailto:ramiabbassi53@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
-                    window.location.href = mailtoLink;
-                  }}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  Send Message
-                </button>
-              </div>
-
-              <div className="mt-10 pt-10 border-t border-slate-700">
-                <p className="text-slate-400 text-sm text-center mb-6">Or download my resume from here</p>
-                <div className="flex justify-center">
-                  <a
-                    href="mycv.pdf"
-                    download
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-slate-700/50 border border-slate-600 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 transform hover:-translate-y-1"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Download CV
-                  </a>
-                </div>
-              </div>
-            </div>
+        {/* Name + Email */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-semibold mb-2 text-slate-200">
+              Your Name
+            </label>
+            <input
+              type="text"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              required
+              className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white"
+            />
           </div>
-        </section>
+
+          <div>
+            <label className="block text-sm font-semibold mb-2 text-slate-200">
+              Your Email
+            </label>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              required
+              className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white"
+            />
+          </div>
+        </div>
+
+        {/* Subject */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-slate-200">
+            Subject
+          </label>
+          <input
+            type="text"
+            value={formData.subject}
+            onChange={(e) =>
+              setFormData({ ...formData, subject: e.target.value })
+            }
+            required
+            className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white"
+          />
+        </div>
+
+        {/* Message */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-slate-200">
+            Message
+          </label>
+          <textarea
+            rows="6"
+            value={formData.message}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
+            required
+            className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white resize-none"
+          />
+        </div>
+
+        {/* Submit */}
+        <button
+          type="submit"
+          className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold hover:shadow-lg"
+        >
+          Send Message
+        </button>
+
+      </form>
+
+      {/* CV */}
+      <div className="mt-10 pt-10 border-t border-slate-700 text-center">
+        <p className="text-slate-400 text-sm mb-6">
+          Or download my resume from here
+        </p>
+
+        <a
+          href="mycv.pdf"
+          download
+          className="inline-flex items-center gap-3 px-8 py-4 bg-slate-700/50 border border-slate-600 text-white rounded-xl font-semibold"
+        >
+          Download CV
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* Back to Top Button */}
         {showButton && (
