@@ -310,7 +310,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold mb-2 text-slate-900">BlueVelvet</h3>
                   <p className="text-slate-500 mb-6">Show case Website • Web development</p>
                   <a
-                    href="https://bluevelvet.great-site.net/"
+                    href="https://bluevelvet.lovestoblog.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-1"
@@ -416,6 +416,7 @@ export default function Home() {
               Your Name
             </label>
             <input
+            name="name"
               type="text"
               value={formData.name}
               onChange={(e) =>
@@ -431,6 +432,7 @@ export default function Home() {
               Your Email
             </label>
             <input
+            name="email"
               type="email"
               value={formData.email}
               onChange={(e) =>
@@ -448,6 +450,7 @@ export default function Home() {
             Subject
           </label>
           <input
+            name="subject"
             type="text"
             value={formData.subject}
             onChange={(e) =>
@@ -464,6 +467,7 @@ export default function Home() {
             Message
           </label>
           <textarea
+            name="message"
             rows="6"
             value={formData.message}
             onChange={(e) =>
